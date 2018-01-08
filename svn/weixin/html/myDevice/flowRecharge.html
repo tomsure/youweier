@@ -2,32 +2,29 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+	    <!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<title>流量充值</title>
 	
-		<title>流量详情</title>
-	
+		<link rel="stylesheet" href="../../dist/libs/jquery-weUI/lib/weui.css" />
+		<link rel="stylesheet" href="../../dist/libs/jquery-weUI/css/jquery-weui.css" />
+		<link rel="stylesheet" type="text/css" href="../../icons/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../icons/icomoon/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="../../css/layout.css"/>
 	
 		<script src="../../dist/plugs/flexible.js/flexible_css.js"></script>
 		<script src="../../dist/plugs/flexible.js/flexible.js"></script>
 	</head>
 	<style type="text/css">
-		/*html {
-    color: #000;
-    background: #fff;
-    overflow-y: scroll;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
-html * {
-    outline:none;
-    -webkit-text-size-adjust: none;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-}
-
-html, body {
-    font-family: sans-serif;
-}*/
+			.dataInfo{
+			margin-top: 0.5rem;
+		}
+		.text_left{
+			margin-left: 1rem;
+		}
+		.text_right{
+			margin-right: 1rem;
+		}
 	</style>
 	<body class="bodyPage">
 		<nav class="nav_header_1">
@@ -44,33 +41,116 @@ html, body {
 			   </div>
 		</nav>
 		<section>
-			<p class="selecte_date"><span class="selecte_date_title">选择日期</span><span class=""></span><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1513238079804" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13206" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><defs><style type="text/css"></style></defs><path d="M879.104 1008.128H129.536c-37.376 0-68.096-30.72-68.096-68.096V189.952c0-37.888 30.72-68.096 68.096-68.096h68.096v34.304c0 56.32 45.568 102.4 102.4 102.4 56.32 0 102.4-45.568 102.4-102.4v-34.304h204.288v34.304c0 56.32 45.568 102.4 102.4 102.4s102.4-45.568 102.4-102.4v-34.304h68.096c37.376 0 68.096 30.72 68.096 68.096v749.568c-0.512 37.888-30.72 68.608-68.608 68.608z m0-647.68H129.536v579.584h749.568V360.448zM300.032 530.944h-102.4v-102.4h102.4v102.4z m0 169.984h-102.4v-102.4h102.4v102.4z m0 170.496h-102.4v-102.4h102.4v102.4z m169.984-340.48h-102.4v-102.4h102.4v102.4z m0 169.984h-102.4v-102.4h102.4v102.4z m0 170.496h-102.4v-102.4h102.4v102.4z m170.496-340.48h-102.4v-102.4h102.4v102.4z m0 169.984h-102.4v-102.4h102.4v102.4z m0 170.496h-102.4v-102.4h102.4v102.4z m170.496-340.48h-102.4v-102.4h102.4v102.4z m0 169.984h-102.4v-102.4h102.4v102.4z m0 170.496h-102.4v-102.4h102.4v102.4zM707.584 224.256c-36.864 0-67.072-30.208-67.072-67.072V86.528c0-36.864 30.208-67.072 67.072-67.072 36.864 0 67.072 30.208 67.072 67.072v70.144c0 37.376-29.696 67.584-67.072 67.584z m-408.576 0c-36.864 0-67.072-30.208-67.072-67.072V86.528c0-36.864 30.208-67.072 67.072-67.072s67.072 30.208 67.072 67.072v70.144c0 37.376-30.208 67.584-67.072 67.584z" fill="#1296db" p-id="13207"></path></svg></p>
-			<div class="chargeBox">
+<p class="selecte_date"><span class="selecte_date_title">选择日期</span>
+				<span class="icon icon-dateList" style="float: right;position: relative;"></span>
+				<input style="direction: ltr; background-color:rgba(255,255,255,0.001); width: 5rem;margin-top: -0.7rem;position: relative;
+    left: 1rem" placeholder="请选择日期"  type="text" id="date2" class="text_right  "  />
+				
+			</p>
+			<div id="chargeContent" class="chargeBox box_common">
 				<div class="chargeRow">
 					
-				<div class="chargeLeft"></div>
-				<div class="chargeCenter"></div>
-				<div class="chargeRight"></div>
+				<div class="chargeLeft textb">
+					<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+	
+				  <p class="text_move">无限量</p>	
+				  <p class="text_move">188元</p>
+				</div>
+				<div class="chargeCenter textb">
+					<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+					<p>3G</p>
+					<p>18元</p>
+				</div>
+				<div class="chargeRight textb">
+					<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+					<p>28G</p>
+					<p>28元</p>
+				</div>
 				</div>
 				 <div class="chargeRow">
-				 	<div class="chargeLeft"></div>
-				<div class="chargeCenter"></div>
-				<div class="chargeRight"></div>
+				 	<div class="chargeLeft textb">
+				 		<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+				 		<p>3G</p>
+					<p>18元</p>
+				 	</div>
+				<div class="chargeCenter textb">
+					<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+					<p>28G</p>
+					<p>28元</p>
+				</div>
+				<div class="chargeRight textb">
+					<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+					<p>28G</p>
+					<p>28元</p>
+				</div>
 				 </div>
 				  <div class="chargeRow">
-				  	<div class="chargeLeft"></div>
-				<div class="chargeCenter"></div>
-				<div class="chargeRight">
-					
+				  	<div class="chargeLeft textb">
+				  		<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+				  		<p>3G</p>
+					<p>18元</p>
+				  	</div>
+				<div class="chargeCenter textb">
+					<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+					<p>28G</p>
+					<p>28元</p>
+				</div>
+				<div class="chargeRight textb">
+					<span class="triangle-topleft">
+				       <p>新</p>
+			        </span>
+					<p>28G</p>
+					<p>28元</p>
 				</div>
 				  </div>
 			</div>
+			
 		</section>
-		<footer class="footer_fixed">
-			<div><h2 class="dataImage1"></h2><span>流量充值</span></div>
-			<div><h2></h2><span>商品屋</span></div>
-			<div><h2></h2><span>实名认证</span></div>
-			<div><h2></h2><span>设备</span></div>
-		</footer>
-	</body>
+		</body>
+	<script src="../../dist/plugs/flexible.js/flexible_css.js"></script>
+		<script src="../../dist/plugs/flexible.js/flexible.js"></script>
+		<script src="../../dist/libs/jquery-2.1.4/jquery.min.js"></script>
+		<script src="../../dist/libs/jquery-weUI/js/jquery-weui.js"></script>
+		<script src="../../dist/libs/jquery-weUI/js/swiper.js"></script>
+		<script src="../../dist/libs/jquery-weUI/js/city-picker.js"></script>
+		<script type="text/javascript" src="../../dist/plugs/shijian/jquer_shijian.js"></script>
+		
+	
+	 <script>
+      $("#date").calendar({
+        onChange: function (p, values, displayValues) {
+          console.log(values, displayValues);
+        }
+      });
+      $("#date2").calendar({
+        value: ['2016-12-12'],
+        dateFormat: 'yyyy年mm月dd日'  // 自定义格式的时候，不能通过 input 的value属性赋值 '2016年12月12日' 来定义初始值，这样会导致无法解析初始值而报错。只能通过js中设置 value 的形式来赋值，并且需要按标准形式赋值（yyyy-mm-dd 或者时间戳)
+      });
+      $("#date-multiple").calendar({
+        multiple: true,
+        onChange: function (p, values, displayValues) {
+          console.log(values, displayValues);
+        }
+      });
+      $("#date3").calendar({
+        container: "#inline-calendar"
+      });
+    </script>
+    <script src="../../js/script.js"></script>
 </html>

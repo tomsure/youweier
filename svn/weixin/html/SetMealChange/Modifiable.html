@@ -5,19 +5,20 @@
 		
 		<title>套餐变更-需申请</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	     <link rel="stylesheet" href="../../dist/libs/bootstrap/css/bootstrap.min.css" />
-	     <link rel="stylesheet" type="text/css" href="../../dist/plugs/mobileSelector/css/mpicker.css"/>
-	    <!--<link rel="stylesheet" href="../../dist/libs/jquery-WeiUI/dist/css/jquery-weui.min.css" />-->
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+	   
 		<link rel="stylesheet" type="text/css" href="../../css/layout.css"/>
 		<link rel="stylesheet" href="../../icons/style.css" />
 		
+	    <link rel="stylesheet" type="text/css" href="../../dist/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../dist/plugs/mobileSelector/css/mpicker.css">
+	     
 	</head>
 	<body class="bodyPage">
 		<nav class="nav_header">
 			<div class="nav_content modifiable">
 				<div class="headimage style_common head_left">
-				<h6>头像</h6>
+				
 			</div>
 			<div class="head_right style_common">
 				<ul>
@@ -30,7 +31,7 @@
 			</div>
 		</nav>
 		<section>
-			<p class="settingBtn" style=""><span style="display: inline-block;float: left;">选择申请变更套餐</span><span class="icon icon-jiantoudown" style="float: right;color: #26A6FF;"></span><span id="select_packge" style="color:#26a6ff ;display: inline-block;float: right;">月流量包</span></p>
+			<p class="settingBtn" style=""><span style="display: inline-block;float: left;">选择申请变更套餐</span><input type="text" id="select-input" class=" select-value3 form-control" value=""><span class="icon icon-jiantoudown" style="float: right;color: #26A6FF;"></span><span id="select_packge" style="color:#26a6ff ;display: inline-block;float: right;">月流量包</span></p>
 			<div class="" style="clear: both;">
 	 <div class="imageParent">
 	<div class="imageCol" id="dv1"> <img src="../../images/green.png"/><p><span>月流量包10元</span><span></span></p> </div>
@@ -48,18 +49,143 @@
 			</div>
 			
 		</section>
-      
+       
+    <script src="../../dist/libs/jquery-2.1.4/jquery.min.js"></script>
+    <!--<script src="../../dist/plugs/mobileSelector/js/json.js"></script>
+    <script src="../../dist/plugs/mobileSelector/js/jsonExchange.js"></script>
+    <script src="../../dist/plugs/mobileSelector/js/mPicker.min.js"></script>-->
+    <script chartset="UTF-8">
+    $(function() {
+        
+//      /**
+//       * 联动的picker
+//       * 三级
+//       */
+//      $('.select-value').mPicker({
+//          level:3,
+//          dataJson: city3,
+//          Linkage:true,
+//          rows:6,
+//          idDefault:true,
+//          splitStr:'-',
+//          header:'<div class="mPicker-header">三级联动选择插件</div>',
+//          confirm:function(json){
+//              console.info('当前选中json：',json);
+//              console.info('【json里有不带value时】');
+//              console.info('选中的id序号为：', json.ids);
+//              console.info('选中的value为：', json.values);
+//              // var id1= $('.select-value').data('id1');
+//              // var id2 = $('.select-value').data('id2');
+//              // var id3 = $('.select-value').data('id3');
+//              // console.info('第一列json：',city3[id1]);
+//              // console.info('第二列json：', city3[id1].child[id2]);
+//              // console.info('第三列json：', city3[id1].child[id2].child[id3]);
+//          },
+//          cancel:function(json){
+//              console.info('当前选中json：',json);
+//          }
+//      })
+//      //获取mpicker实例
+//      var method= $('.select-value').data('mPicker');
+//      console.info('第一个mpicker的实例为：',method);
+//      //mpicker方法
+//      // method.showPicker();
+//      // method.hide(function(){
+//      //     console.info(this)
+//      // });
+//
+//      /**
+//       * 联动的picker--添加修改后修改数据的效果
+//       * 两级
+//       */
+//      $('.select-value1').mPicker({
+//          level: 2,
+//          dataJson: dataJson,
+//          Linkage: true,
+//          rows: 6,
+//          idDefault: true,
+//          splitStr: '-',
+//          header: '<div class="mPicker-header">两级联动选择插件</div>',
+//          confirm: function (json) {
+//              console.info('当前选中json：', json);
+//              var _this= this;
+//              console.info('【json里有带value的情况】');
+//              //更新json
+//              console.info('3s后更新json...');
+//              setTimeout(function(){
+//                  _this.container.data('mPicker').updateData(level3);
+//                  var json = getVal();
+//                  var valArr = json.value;
+//                  console.info('更新成功!!');
+//                  console.info('更新后的value为空', valArr[0], valArr[1]);
+//                  console.info('更新后的value拼接值为空', json.result);
+//              },3000);
+//              
+//          },
+//          cancel: function (json) {
+//          }
+//      })
+//      //获取value
+//      function getVal(){
+//          var value1 = $('.select-value1').data('value1');
+//          var value2 = $('.select-value1').data('value2');
+//          var result='';
+//          value1 = value1 || '';
+//          value2 = value2 || '';
+//          if(value1){
+//              result= value1;
+//          }
+//          if(value2){
+//              result = result+'-'+ value2;
+//          }
+//          return {
+//              value:[value1, value2],
+//              result: result
+//          };
+//      }
+//
+//      /**
+//       * 不联动的picker
+//       * 两级
+//       */
+//      var method2=$('.select-value2').mPicker({
+//          level:2,
+//          dataJson:level3,
+//          rows:5,
+//          Linkage:false,
+//          header:'<div class="mPicker-header">非联动选择插件</div>',
+//          idDefault:true,
+//          confirm:function(json){
+//              console.info('当前选中json：', json);
+//          }
+//      })
+
+        /**
+         * 一级
+         */
+        var method3=$('.select-value3').mPicker({
+            level:1,
+            dataJson:dataJson,
+            Linkage:false,
+            rows:4,
+            idDefault:true,
+            header:'<div class="mPicker-header">套餐选择</div>',
+            confirm:function(json){
+                console.info('当前选中json：', json);
+            },
+            cancel:function(json){
+                console.info('当前选中json：', json);
+            }
+        })
+    });
+    </script>
 	</body>
 	
 	<script src="../../dist/plugs/flexible.js/flexible_css.js"></script>
 		<script src="../../dist/plugs/flexible.js/flexible.js"></script>
-		<script src="../../dist/libs/jquery-2.1.4/jquery.min.js"></script>
-		<script src="../../dist/plugs/mobileSelector/js/json.js"></script>
-		<script src="../../dist/plugs/mobileSelector/js/jsonExchange.js"></script>
+      <script src="../../dist/libs/jquery-2.1.4/jquery.min.js"></script>
+    <script src="../../dist/plugs/mobileSelector/js/json.js"></script>
+    <script src="../../dist/plugs/mobileSelector/js/jsonExchange.js"></script>
+    <script src="../../dist/plugs/mobileSelector/js/mPicker.js"></script>
 		
-		<script src="../../dist/plugs/mobileSelector/js/mPicker.min.js"></script>
-		<!--<script src="../../dist/libs/jquery-WeiUI/dist/js/jquery-weui.min.js"></script>-->
-		<!--<script src="../../dist/libs/jquery-WeiUI/dist/js/swiper.min.js"></script>-->
-	<!--<script src="../../dist/libs/jquery-WeiUI/dist/lib/fastclick.js"></script>-->
-	<script src="../../js/script.js"></script>
 </html>
